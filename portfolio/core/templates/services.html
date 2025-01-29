@@ -1,0 +1,166 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M Awais</title>
+    <link rel="icon" href="{% static 'Assets/images/icon.ico' %}">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!--icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--Link css-->
+    <link rel="stylesheet" href="{% static 'Assets/css/style.css' %}"> {% endcomment %}
+</head>
+<body>
+    <!--Header-->
+    <header class="header">
+        <a href="/" class="logo">M <span>Awais</span></a>
+        <i class="fa-solid fa-bars" id="menuicon"></i>
+        <nav class="navbar">
+          <a href="/">Home</a>
+          <a href="/about" >About Me</a>
+          <a href="/services" class="active">Services</a>
+          <a href="/portfolio">Portfolio</a>
+          <a href="/contact">Contact Me</a>
+        </nav>
+
+    </header>
+<section id="services" class="service-bg" >
+    <div class="service-content" >
+    <h1 class="heading1">My <span>Services</span></h1></div>
+   
+</section>
+<!--Service Section-->
+<section class="service" id="services">
+    <h2 class="heading" data-aos="fade-down">My <span>Services</span></h2>
+    <div class="service-container" data-aos="fade-up">
+      <div class="service-box">
+        <i class="fa-solid fa-code"></i>
+        <h3>Front-End Developer</h3>
+        <p>As a Website developer, my expertise lies in engaging and visually appealing user interfaces using a
+          combination of HTML, CSS, and JavaScript.</p>
+
+      </div>
+      <div class="service-box">
+        <i class="fa-solid fa-database"></i>
+        <h3>Back-End Developer</h3>
+        <p>As a Python Programmer, my expertise revolves around architecting efficient server-side systems, utilizing a django framework and SQLite.</p>
+
+      </div>
+      <div class="service-box">
+        <i class="fa-solid fa-robot"></i>
+        <h3>AI/ML Engineer</h3>
+        <p>As a Microsoft Certified AI/ML Engineer(Ai-900),I am starting to learn about different algorithms to train AI
+          models and applications.</p>
+      </div>
+    </div>
+  </section>
+<!---Skill section-->
+<section class="contact" id="services">
+    <h2 class="heading" data-aos="fade-down">My <span>Skills</span></h2>
+    <div class="skills-section" id="skills">
+      <div class="progress-bars">
+        <div class="skill-box">
+          <span class="title">HTML CSS JS</span>
+          <div class="skill-bar">
+            <span class="skill-per html">
+              <span class="tooltip">80%</span>
+            </span>
+          </div>
+        </div>
+        <div class="skill-box">
+          <span class="title">Django</span>
+          <div class="skill-bar">
+            <span class="skill-per css">
+              <span class="tooltip">70%</span>
+            </span>
+          </div>
+        </div>
+        <div class="skill-box">
+          <span class="title">Python Programming</span>
+          <div class="skill-bar">
+            <span class="skill-per javascript">
+              <span class="tooltip">75%</span>
+            </span>
+          </div>
+        </div>
+        <div class="skill-box">
+          <span class="title">Ai/ML</span>
+          <div class="skill-bar">
+            <span class="skill-per nodejs">
+              <span class="tooltip">30%</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!---Footer-->
+<footer class="footer">
+    <div class="footer-text">
+      <p>Copyright &copy; <span id="current-year">2023</span> by M AWAIS | All Rights Reserved</p>
+    </div>
+    <div class="footer-icon">
+      <a href="#services"><i class="fa-solid fa-arrow-up"></i></a>
+    </div>
+  </footer>
+   <!--js link-->
+   <script href="Assets/js/app.js">
+</script>
+<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    let menuIcon = document.querySelector('#menuicon');
+    let navbar =document.querySelector('.navbar');
+
+    menuIcon.onclick = () =>{
+        menuicon.classList.toggle('fa-x');
+        navbar.classList.toggle('active');
+
+    };
+    
+    
+    let sections = document.querySelectorAll('section');
+    let navlinks = document.querySelectorAll('header nav a');
+    
+    window.onscroll = () => {
+        sections.forEach(sec => {
+            let top = window.scrollY;
+            let offset = sec.offsetTop - 150;
+            let height = sec.offsetHeight;
+            let id = sec.getAttribute('id');
+    
+            if (top >= offset && top < offset + height) {
+                navlinks.forEach(links => {
+                    links.classList.remove('active');
+                });
+    
+                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+            }
+        });
+        menuicon.classList.remove('fa-x');
+        navbar.classList.remove('active');
+    };
+
+    let header = document.querySelectorAll('header');
+    header.classList.toggle('sticky',window.scrollY>100);
+
+    
+    </script>
+    <script>
+        AOS.init();
+    </script>
+    <script>
+        // Get the current year
+        const currentYear = new Date().getFullYear();
+    
+        // Update the year in the footer
+        document.getElementById("current-year").textContent = currentYear;
+      </script>
+</body>
+</html>

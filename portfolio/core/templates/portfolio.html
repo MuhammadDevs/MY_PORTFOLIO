@@ -1,0 +1,245 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M Awais</title>
+  <link rel="icon" href="{% static 'Assets/images/icon.ico' %}">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!--icons-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!--Link css-->
+  <link rel="stylesheet" href="{% static 'Assets/css/style.css' %}">
+</head>
+
+<body>
+  <!--Header-->
+  <header class="header">
+    <a href="/" class="logo">M <span>Awais</span></a>
+    <i class="fa-solid fa-bars" id="menuicon"></i>
+    <nav class="navbar">
+      <a href="/">Home</a>
+      <a href="/about">About Me</a>
+      <a href="/services">Services</a>
+      <a href="/portfolio" class="active">Portfolio</a>
+      <a href="/contact">Contact Me</a>
+    </nav>
+
+  </header>
+  <section id="portfolio" class="portfolio-bg">
+    <div class="portfolio-content">
+      <h1 class="heading1">My <span>Portfolio</span></h1>
+    </div>
+  </section>
+  <section class="portfolio" id="portfolio">
+    <h2 class="heading" data-aos="fade-down">Latest <span>Projects</span></h2>
+    <div class="portfolio-container" data-aos="fade-up">
+      <div class="portfolio-box">
+        <img src="{% static 'Assets/images/porfolio1.png'%}" alt="">
+        <div class="portfolio-content">
+          <h4>Ecommerce</h4>
+          <p class="text-center" style="color: #323946;">"Developing a e-commerce site, a hub for beauty enthusiasts to
+            explore and shop for premium cosmetics, all powered by Django."</p>
+          <a href="https://github.com/MuhammadDevs/Az-cosmatics_django_project.git" target="_blank"><i
+              class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+      <div class="portfolio-box">
+        <img src="{% static 'Assets/images/portfolio2.jpeg'%}" alt="">
+        <div class="portfolio-content">
+          <h4>ChatBot</h4>
+          <p class="text-center" style="color: #323946;">"Developing intuitive chatbot experiences that seamlessly blend
+            technology and conversational elegance."</p>
+          <a href="https://github.com/MuhammadDevs/Android_ChatBot.git" target="_blank"><i
+              class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+      <div class="portfolio-box">
+        <img src="{% static 'Assets/images/porfolio3.png'%}" alt="">
+        <div class="portfolio-content">
+          <h4>QR Generator</h4>
+          <p class="text-center" style="color: #323946;">"Developing a user-friendly QR code generator in Django,
+            enabling seamless creation of QR codes from any link." </p>
+          <a href="https://github.com/MuhammadDevs/qr_code_generator_django.git" target="_blank"><i
+              class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+      <div class="portfolio-box">
+        <img src="{% static 'Assets/images/portfolio7.png'%}" alt="">
+        <div class="portfolio-content">
+          <h4>To-Do App</h4>
+          <p class="text-center" style="color: #323946;">"To-Do List App, a simple and efficient platform to organize
+            and manage your tasks, all built with Django."</p>
+          <a href="https://github.com/MuhammadDevs/TODO_List_In_Django.git" target="_blank"><i
+              class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+      <div class="portfolio-box">
+        <img src="{% static 'Assets/images/portfolio8.png'%}" alt="">
+        <div class="portfolio-content">
+          <h4>CRUD Application</h4>
+          <p class="text-center" style="color: #323946;">"Welcome to my CRUD application, a platform to create, read,
+            update, and delete records efficiently, all powered by Django."</p>
+          <a href="https://github.com/MuhammadDevs/CRUD_Operations_In_Django/tree/master" target="_blank"><i
+              class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+      <div class="portfolio-box">
+        <img src="{% static 'Assets/images/portfolio9.jpg'%}" alt="">
+        <div class="portfolio-content">
+          <h4>Attendance</h4>
+          <p class="text-center" style="color: #323946;">""Developing Face Recognition Attendance System in Python, enabling seamless tracking of attendance using facial recognition technology."" </p>
+          <a href="https://github.com/MuhammadDevs/Face_Recognization_Attendence_System_In_Python/tree/master" target="_blank"><i
+              class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+      <div class="portfolio-box">
+        <img src="{% static 'Assets/images/portfolio4.png'%}" alt="">
+        <div class="portfolio-content">
+          <h4>Food Website</h4>
+          <p class="text-center" style="color: #323946;">"This web project involves developing an organic food website
+            tailored for university student for his semester project."</p>
+          <a href="https://azwebdeveloper.github.io/ffood/index.html" target="_blank"><i
+              class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+      <div class="portfolio-box">
+        <img src="{% static 'Assets/images/portfolio5.png'%}" alt="">
+        <div class="portfolio-content">
+          <h4>Medical Website</h4>
+          <p class="text-center" style="color: #323946;">"This web project involves developing an Medical website
+            tailored for university students as part of their semester project."</p>
+          <a href="https://azwebdeveloper.github.io/Doctor/" target="_blank"><i
+              class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+      <div class="portfolio-box">
+        <img src="{% static 'Assets/images/portfolio6.png'%}" alt="">
+        <div class="portfolio-content">
+          <h4>Az_Developers</h4>
+          <p class="text-center" style="color: #323946;">"This project involves designing the AZ_Developers website
+            using Bootstrap 5 to practice and master the Bootstrap 5 framework." </p>
+          <a href="https://github.com/MuhammadDevs/AZ-Developers.git" target="_blank"><i
+              class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!---Contant me section-->
+  <!--Experience section-->
+  <section class="contact" id="portfolio">
+    <h2 class="heading" data-aos="fade-down">My <span>Experience</span></h2>
+    <div class="timeline-main">
+      <div class="timeline-wrap">
+        <div class="timeline-card">
+          <div class="timeline-card-wrap">
+            <div class="card-head-wrap">
+              <h3 class="timeline-card-head">Working Experience</h3>
+
+            </div>
+            <p class="timeline-card-text">
+              From the outset, I embarked on my journey in web development through internships
+              at Globe Tech Solution (RYK) and Dynamic Developers (Islamabad). During these
+              roles, I gained hands-on experience in building responsive and dynamic websites,
+              enhancing my skills in modern web development practices. My passion for technology
+              led me to explore the field of artificial intelligence and machine learning, where
+              I pursued additional learning and achieved certification as a Microsoft AI/ML Engineer (AI-900).
+            </p>
+          </div>
+        </div>
+        <div class="timeline-card">
+          <div class="timeline-card-wrap">
+            <div class="card-head-wrap">
+              <h3 class="timeline-card-head">Education</h3>
+            </div>
+            <p class="timeline-card-text">
+              I graduated as a <b>Software Engineer</b> from <b>Khwaja Fareed University of Engineering & Information
+                Technology (KFUEIT), RYK</b>,
+              achieving the highest CGPA in my class. During my academic journey, I gained comprehensive
+              knowledge in programming, continuously enhancing my technical skills and understanding of key
+              concepts such as <b>data structures and algorithms (DSA)</b>, <b>software requirements analysis</b>, and
+              <b>quality assurance testing</b>.
+              This rigorous education provided me with both theoretical foundations and practical expertise, preparing
+              me to excel in the dynamic field
+              of software development.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!---Footer-->
+  <footer class="footer">
+    <div class="footer-text">
+      <p>Copyright &copy; <span id="current-year">2023</span> by M AWAIS | All Rights Reserved</p>
+    </div>
+    <div class="footer-icon">
+      <a href="#portfolio"><i class="fa-solid fa-arrow-up"></i></a>
+    </div>
+  </footer>
+
+  <!--js link-->
+  <script href="Assets/js/app.js">
+  </script>
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    let menuIcon = document.querySelector('#menuicon');
+    let navbar = document.querySelector('.navbar');
+
+    menuIcon.onclick = () => {
+      menuIcon.classList.toggle('fa-x');
+      navbar.classList.toggle('active');
+    };
+
+    let sections = document.querySelectorAll('section');
+    let navlinks = document.querySelectorAll('header nav a');
+
+    window.onscroll = () => {
+      sections.forEach(sec => {
+        let top = window.scrollY;
+        let offset = sec.offsetTop - 150;
+        let height = sec.offsetHeight;
+        let id = sec.getAttribute('id');
+
+        if (top >= offset && top < offset + height) {
+          navlinks.forEach(links => {
+            links.classList.remove('active');
+          });
+
+          // Ensure the selector matches the proper anchor tag
+          let activeLink = document.querySelector(`header nav a[href="/${id}"]`);
+          if (activeLink) {
+            activeLink.classList.add('active');
+          }
+        }
+      });
+
+      menuIcon.classList.remove('fa-x');
+      navbar.classList.remove('active');
+    };
+
+    // Sticky header logic
+    let header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('sticky', window.scrollY > 100);
+    });
+
+  </script>
+  <script>
+    AOS.init();
+  </script>
+  <script>
+    // Get the current year
+    const currentYear = new Date().getFullYear();
+    document.getElementById("current-year").textContent = currentYear;
+  </script>
+</body>
+
+</html>

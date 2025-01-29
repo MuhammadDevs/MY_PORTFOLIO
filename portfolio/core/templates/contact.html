@@ -1,0 +1,200 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>M Awais</title>
+  <link rel="icon" href="{% static 'Assets/images/icon.ico' %}" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Link css -->
+  <link rel="stylesheet" href="{% static 'Assets/css/style.css' %}" />
+</head>
+
+
+<body>
+  <style>
+    /* Popup Styles */
+    .popup-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+      /* Initially hidden */
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+    }
+
+    .popup {
+      background-color: var(--seconde--bg-color);
+      color: var(--text-color);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      position: relative;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .popup p {
+      font-size: 1.2rem;
+    }
+
+    .popup .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 1.5rem;
+      color: var(--main-color);
+      cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="/" class="logo">M <span>Awais</span></a>
+    <i class="fa-solid fa-bars" id="menuicon"></i>
+    <nav class="navbar">
+      <a href="/">Home</a>
+      <a href="/about">About Me</a>
+      <a href="/services">Services</a>
+      <a href="/portfolio">Portfolio</a>
+      <a href="/contact" class="active">Contact Me</a>
+    </nav>
+  </header>
+  <section id="contact" class="service-bg">
+    <div class="contact-content">
+      <h1 class="heading1">Get In <span>Touch</span></h1>
+    </div>
+ 
+  </section>
+  <!-- Contact Form Section -->
+  <section class="contact" id="contact">
+    <h2 class="heading" data-aos="fade-down">Contact <span>Me!</span></h2>
+    <form method="post" onsubmit="showPopup(event)">
+      {% csrf_token %}
+      <div class="input-box">
+        <input type="text" name="name" id="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Email Address" required />
+      </div>
+      <div class="input-box">
+        <input type="text" name="phone number" placeholder="Phone Number" required />
+        <input type="text" name="subject" placeholder="Email Subject" required />
+      </div>
+      <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+      <input type="submit" value="Send Message" class="btn" />
+    </form>
+         <!-- Popup Container -->
+         <div class="popup-container" id="popup">
+          <div class="popup">
+            <p>Thanks for contacting me! I will respond to you in a few minutes.</p>
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+          </div>
+        </div>
+  </section>
+
+
+  <!---Footer-->
+  <footer class="footer">
+    <div class="footer-text">
+      <p>Copyright &copy; <span id="current-year">2023</span> by M AWAIS | All Rights Reserved</p>
+    </div>
+    <div class="footer-icon">
+      <a href="#contact"><i class="fa-solid fa-arrow-up"></i></a>
+    </div>
+  </footer>
+
+  <!-- js link -->
+  <script href="Assets/js/app.js"></script>
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    let menuIcon = document.querySelector('#menuicon')
+    let navbar = document.querySelector('.navbar')
+
+    menuIcon.onclick = () => {
+      menuicon.classList.toggle('fa-x')
+      navbar.classList.toggle('active')
+    }
+
+    let sections = document.querySelectorAll('section')
+    let navlinks = document.querySelectorAll('header nav a')
+
+    window.onscroll = () => {
+      sections.forEach((sec) => {
+        let top = window.scrollY
+        let offset = sec.offsetTop - 150
+        let height = sec.offsetHeight
+        let id = sec.getAttribute('id')
+
+        if (top >= offset && top < offset + height) {
+          navlinks.forEach((links) => {
+            links.classList.remove('active')
+          })
+
+          document.querySelector('header nav a[href*=' + id + ']').classList.add('active')
+        }
+      })
+      menuicon.classList.remove('fa-x')
+      navbar.classList.remove('active')
+    }
+
+    let header = document.querySelectorAll('header')
+    header.classList.toggle('sticky', window.scrollY > 100)
+  </script>
+  <script>
+    AOS.init()
+  </script>
+  <script>
+    /**
+     * Show popup when the form is submitted
+     * Prevents default form submission for demo purposes
+     */
+    function showPopup(event) {
+      event.preventDefault(); // Prevents form submission for demo
+      const popup = document.getElementById('popup');
+      popup.style.display = 'flex';
+
+      // Automatically close the popup after 5 seconds
+      setTimeout(() => {
+        popup.style.display = 'none';
+      }, 7000);
+
+      // Optionally, submit the form programmatically if needed
+      // Uncomment the following line to allow form submission:
+      event.target.submit();
+    }
+
+    function closePopup() {
+      const popup = document.getElementById('popup');
+      popup.style.display = 'none';
+    }
+  </script>
+  <script>
+    // Get the current year
+    const currentYear = new Date().getFullYear();
+    document.getElementById("current-year").textContent = currentYear;
+  </script>
+</body>
+
+</html>
